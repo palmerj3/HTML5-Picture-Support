@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="../html5picture.js"></script>
+    <script type="text/javascript">
+      window.onload = function() {
+        var pictureSupport = new HTML5Picture();
+        pictureSupport.init();
+      }
+    </script>
+  </head>
+  <body>
+    <picture alt="angry pirate">
+       <source src="hires.jpeg" media="max-width:800px" />
+       <source src="midres.jpeg" media="max-width:480px" />
+       <source src="lores.jpeg" />
+          <!-- fallback for browsers without support -->
+          <img src="midres.jpeg" alt="angry pirate" />
+    </picture>
+  </body>
+</html>
