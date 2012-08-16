@@ -4,12 +4,13 @@ var HTML5Picture = function(args) {
 };
 
 HTML5Picture.prototype.init = function init(args) {
-  var pictureNodes = this.getPictureNodes(),
-      pictureNodesLength = pictureNodes.length,
+  var pictureNodesLength = this.pictureNodes.length,
       i;
 
-  for (i = 0; i < pictureNodesLength; i++) {
-    this.initializePictureNode(pictureNodes[i]);
+  if (window.matchMedia !== undefined) {
+    for (i = 0; i < pictureNodesLength; i++) {
+      this.initializePictureNode(this.pictureNodes[i]);
+    }
   }
 };
 
