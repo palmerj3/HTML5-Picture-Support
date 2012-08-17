@@ -7,11 +7,11 @@ Allows you to create Picture tags, similar in format to the video tag, and utili
 
 ```
 <picture alt="angry pirate">
-   <source src=hires.png media="min-width:800px">
-   <source src=midres.png media="min-width:480px">
-   <source src=lores.png>
-      <!-- fallback for browsers without support -->
-      <img src=midres.png alt="angry pirate">
+  <source src="hires.jpeg" media="(min-width:600px) and (max-width:800px)" />
+  <source src="midres.jpeg" media="(min-width:300px) and (max-width:600px)" />
+  <source src="lores.jpeg" media="(max-width:300px)" />
+  <!-- fallback for browsers without support -->
+  <img src="midres.jpeg" alt="angry pirate" />
 </picture>
 ```
 

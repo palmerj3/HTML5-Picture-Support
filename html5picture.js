@@ -52,7 +52,10 @@ HTML5Picture.prototype.initializePictureNode = function initializePictureNode(no
   // Build index and attach listeners for media query matches
   for (sourceIndex = 0; sourceIndex < sourceLength; sourceIndex++) {
     sourceElem = sourceChildren[sourceIndex];
-    mql = window.matchMedia('(' + sourceElem.media + ')');
+    if (sourceElem.getAttribute('media').indexOf('(') === -1) {
+      sourceElem.setAttribute('media', '(' + sourceElem.getAttribute('media') + ')');
+    }
+    mql = window.matchMedia(sourceElem.getAttribute('media'));
         
     if (mql.media !== 'invalid') {      
       if (this.mediaQueryToSourceNodes[mql.media] === undefined) {
